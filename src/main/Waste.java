@@ -2,13 +2,13 @@ package main;
 
 import java.util.Stack;
 
-public class Tableau {
-    
-    private Stack<Card> cards = new Stack<Card>(); 
-    
-    public Tableau(){
+public class Waste {
+
+    private Stack<Card> cards = new Stack<Card>();
+
+    public Waste() {
     }
-  
+
     public Stack<Card> getCards() {
         return cards;
     }
@@ -16,4 +16,5 @@ public class Tableau {
     public void setCards(Stack<Card> cards) {
         this.cards = cards;
     }
+
 }

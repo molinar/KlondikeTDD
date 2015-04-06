@@ -1,41 +1,72 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Stack;
+import java.util.Random;
 
 public class StartController {
-    
+
     private ArrayList<Tableau> tableaus;
-    
-    public StartController(){
+
+    private ArrayList<Foundation> foundations;
+
+    private Waste waste;
+
+    private Deck deck;
+
+    public StartController() {
         this.tableaus = new ArrayList<Tableau>();
-        for(int i=0; i<7; i++){
+        for (int i = 0; i < 7; i++) {
             Tableau tableau = new Tableau();
-            Stack<Card> cards = new Stack<Card>(); 
-            for(int j=0; j<i+1; j++){
-                Card card = new Card();
-                cards.add(card);
+            for (int j = 0; j < i + 1; j++) {
+                Random rn = new Random();
+                Card card = new Card(rn.nextInt(4), rn.nextInt(12));
+                tableau.getCards().add(card);
             }
-            tableau.setCards(cards);
-            tableaus.add(tableau);           
+            tableaus.add(tableau);
         }
+        uncoveredCardsStackTableaus();
+
+        this.foundations = new ArrayList<Foundation>();
+        for (int i = 0; i < 4; i++) {
+            Foundation foundation = new Foundation();
+            foundations.add(foundation);
+        }
+
+        this.deck = new Deck();
+        for (int i = 0; i < 24; i++) {
+            Random rn = new Random();
+            Card card = new Card(rn.nextInt(4), rn.nextInt(12));
+            deck.getCards().add(card);
+        }
+
+        this.waste = new Waste();
+
     }
 
     public boolean emptyFoundations() {
-        return true;
+        int i=0;
+        for (Foundation foundation: foundations){
+            if(foundation.getCards().empty()){
+                i++;
+            }
+        }
+        if(i==4){
+            return true;
+        }
+        return false; 
     }
 
     public boolean emptyWaste() {
-        return true;
+        return waste.getCards().empty();
     }
 
     public int sizeCompleteDeck() {
-        return 24;
+        return deck.getCards().size();
     }
 
     public ArrayList<Integer> sizeCoveredCardsTableaus() {
         ArrayList<Integer> sizeTableaus = new ArrayList<Integer>();
-        for(Tableau tableau: tableaus){
+        for (Tableau tableau : tableaus) {
             sizeTableaus.add(tableau.getCards().size());
         }
         return sizeTableaus;
@@ -43,7 +74,7 @@ public class StartController {
 
     public ArrayList<Card> uncoveredCardsStackTableaus() {
         ArrayList<Card> uncoveredCardsStackTableaus = new ArrayList<Card>();
-        for(Tableau tableau: tableaus){ 
+        for (Tableau tableau : tableaus) {
             tableau.getCards().peek().setUncovered(true);
             uncoveredCardsStackTableaus.add(tableau.getCards().peek());
         }

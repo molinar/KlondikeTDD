@@ -2,13 +2,13 @@ package main;
 
 import java.util.Stack;
 
-public class Tableau {
-    
-    private Stack<Card> cards = new Stack<Card>(); 
-    
-    public Tableau(){
+public class Foundation {
+
+    private Stack<Card> cards = new Stack<Card>();
+
+    public Foundation() {
     }
-  
+
     public Stack<Card> getCards() {
         return cards;
     }
