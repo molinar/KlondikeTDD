@@ -12,28 +12,47 @@ public class StartController {
     private StackCards waste;
 
     private StackCards deck;
+    
+    public static final int NUM_TABLEAUS = 7;
+    
+    public static final int NUM_FOUNDATIONS = 4;
+    
+    public static final int NUM_CARDS_DECK = 24;
 
     public StartController() {
+        this.createTableaus();
+        this.createFoundations();
+        this.createDeck();
+        this.createWaste();
+    }
+
+    public void createTableaus() {
         this.tableaus = new ArrayList<StackCards>();
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < NUM_TABLEAUS; i++) {
             StackCards tableau = new StackCards();
             for (int j = 0; j < i + 1; j++) {
                 tableau.getCards().add(createRandomCard());
             }
             tableaus.add(tableau);
         }
-        uncoveredCardsStackTableaus();
+        this.uncoveredCardsStackTableaus();
+    }
 
+    public void createFoundations() {
         this.foundations = new ArrayList<StackCards>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < NUM_FOUNDATIONS; i++) {
             foundations.add(new StackCards());
         }
+    }
 
+    public void createDeck() {
         this.deck = new StackCards();
-        for (int i = 0; i < 24; i++) {
+        for (int i = 0; i < NUM_CARDS_DECK; i++) {
             deck.getCards().add(createRandomCard());
         }
+    }
 
+    public void createWaste() {
         this.waste = new StackCards();
     }
 
