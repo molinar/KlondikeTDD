@@ -9,6 +9,12 @@ public class StackCards {
 
     public StackCards() {
     }
+    
+    public StackCards(int size) {
+        for (int i = 0; i < size; i++) {
+            this.getCards().add(createRandomCard());
+        }
+    }
 
     public Stack<Card> getCards() {
         return cards;

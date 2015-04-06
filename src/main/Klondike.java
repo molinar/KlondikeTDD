@@ -2,9 +2,9 @@ package main;
 
 public class Klondike {
     
-    protected Deck deck;
+    protected StackCards deck;
 
-    protected Waste waste;
+    protected StackCards waste;
     
     public int getSizeWaste() {
         return this.waste.getCards().size();

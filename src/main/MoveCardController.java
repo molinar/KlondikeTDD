@@ -3,8 +3,8 @@ package main;
 public class MoveCardController extends Klondike{
 
     public MoveCardController(int sizeDeck, int sizeWaste) {
-        this.deck = new Deck(sizeDeck);
-        this.waste = new Waste(sizeWaste);
+        this.deck = new StackCards(sizeDeck);
+        this.waste = new StackCards(sizeWaste);
     }
 
     public void moveFromDeckToWaste() {

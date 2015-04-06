@@ -42,11 +42,11 @@ public class StartController extends Klondike{
     }
 
     public void createDeck() {
-        this.deck = new Deck(NUM_CARDS_DECK);
+        this.deck = new StackCards(NUM_CARDS_DECK);
     }
 
     public void createWaste() {
-        this.waste = new Waste(0);
+        this.waste = new StackCards(0);
     }
     
     public Card createRandomCard() {
