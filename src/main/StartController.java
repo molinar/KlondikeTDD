@@ -46,16 +46,13 @@ public class StartController {
     }
 
     public void createDeck() {
-        this.deck = new StackCards();
-        for (int i = 0; i < NUM_CARDS_DECK; i++) {
-            deck.getCards().add(createRandomCard());
-        }
+        this.deck = new Deck(NUM_CARDS_DECK);
     }
 
     public void createWaste() {
-        this.waste = new StackCards();
+        this.waste = new Waste(0);
     }
-
+    
     public Card createRandomCard() {
         Random rn = new Random();
         return new Card(rn.nextInt(4), rn.nextInt(12));
@@ -74,11 +71,11 @@ public class StartController {
         return false;
     }
 
-    public int sizeWaste() {
+    public int getSizeWaste() {
         return waste.getCards().size();
     }
 
-    public int sizeDeck() {
+    public int getSizeDeck() {
         return deck.getCards().size();
     }
 
