@@ -34,4 +34,12 @@ public class StackCards {
         Random rn = new Random();
         return new Card(randomEnum(Suit.class), rn.nextInt(12));
     }
+    
+    public int getLastValue(){
+        return this.getCards().peek().getValue();
+    }
+    
+    public Suit getLastSuit(){
+        return this.getCards().peek().getSuit();
+    }
 }

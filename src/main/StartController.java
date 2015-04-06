@@ -10,9 +10,7 @@ public class StartController extends Klondike{
     protected ArrayList<Foundation> foundations;
       
     public static final int NUM_TABLEAUS = 7;
-    
-    public static final int NUM_FOUNDATIONS = 4;
-    
+      
     public static final int NUM_CARDS_DECK = 24;
 
     public StartController() {

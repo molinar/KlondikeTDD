@@ -23,11 +23,8 @@ public class MoveCardController extends Klondike{
     }
     
     public void moveFromWasteToFoundation(Foundation foundation){
-        if(foundation.getSuit() == this.waste.getCards().peek().getSuit() && 
-          (this.waste.getCards().peek().getValue() == 1 && foundation.getCards().empty())){
-            foundation.getCards().push(this.waste.getCards().pop());
-        }else if(foundation.getSuit() == this.waste.getCards().peek().getSuit() && 
-          this.waste.getCards().peek().getValue() - foundation.getCards().peek().getValue() == 1){
+        if(foundation.getSuit() == this.waste.getLastSuit() && 
+          (this.waste.getLastValue() == 1 && foundation.getCards().empty()||this.waste.getLastValue() - foundation.getLastValue() == 1)){
             foundation.getCards().push(this.waste.getCards().pop());
         }
     }    
