@@ -7,8 +7,8 @@ public class StartController extends Klondike{
     
     private ArrayList<StackCards> tableaus;
     
-    protected ArrayList<StackCards> foundations;
-    
+    protected ArrayList<Foundation> foundations;
+      
     public static final int NUM_TABLEAUS = 7;
     
     public static final int NUM_FOUNDATIONS = 4;
@@ -35,9 +35,9 @@ public class StartController extends Klondike{
     }
 
     public void createFoundations() {
-        this.foundations = new ArrayList<StackCards>();
-        for (int i = 0; i < NUM_FOUNDATIONS; i++) {
-            foundations.add(new StackCards());
+        this.foundations = new ArrayList<Foundation>();
+        for(Suit suit: Suit.values()){
+            foundations.add(new Foundation(suit));
         }
     }
 
@@ -62,7 +62,7 @@ public class StartController extends Klondike{
 
     public boolean emptyFoundations() {
         int i = 0;
-        for (StackCards foundation : foundations) {
+        for (Foundation foundation : foundations) {
             if (foundation.getCards().empty()) {
                 i++;
             }
