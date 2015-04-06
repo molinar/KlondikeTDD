@@ -1,11 +1,7 @@
 package main;
 
-public class MoveCardController {
+public class MoveCardController extends Klondike{
 
-    private Deck deck;
-
-    private Waste waste;
- 
     public MoveCardController(int sizeDeck, int sizeWaste) {
         this.deck = new Deck(sizeDeck);
         this.waste = new Waste(sizeWaste);
@@ -22,13 +18,4 @@ public class MoveCardController {
             this.waste.getCards().push(card).setUncovered(true);
         }
     }
-
-    public int getSizeDeck() {
-        return this.deck.getCards().size();
-    }
-
-    public int getSizeWaste() {
-        return this.waste.getCards().size();
-    }
-
 }

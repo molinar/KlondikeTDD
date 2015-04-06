@@ -3,15 +3,11 @@ package main;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class StartController {
-
+public class StartController extends Klondike{
+    
     private ArrayList<StackCards> tableaus;
 
     private ArrayList<StackCards> foundations;
-
-    private StackCards waste;
-
-    private StackCards deck;
     
     public static final int NUM_TABLEAUS = 7;
     
@@ -70,15 +66,7 @@ public class StartController {
         }
         return false;
     }
-
-    public int getSizeWaste() {
-        return waste.getCards().size();
-    }
-
-    public int getSizeDeck() {
-        return deck.getCards().size();
-    }
-
+    
     public ArrayList<Integer> sizeCoveredCardsTableaus() {
         ArrayList<Integer> sizeTableaus = new ArrayList<Integer>();
         for (StackCards tableau : tableaus) {
