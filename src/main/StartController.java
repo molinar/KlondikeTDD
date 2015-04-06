@@ -59,16 +59,14 @@ public class StartController extends Klondike{
     }
 
     public boolean emptyFoundations() {
-        int i = 0;
+        boolean empty = false;
         for (Foundation foundation : foundations) {
             if (foundation.getCards().empty()) {
-                i++;
+                empty = true;
+                break;
             }
         }
-        if (i == 4) {
-            return true;
-        }
-        return false;
+        return empty;
     }
     
     public ArrayList<Integer> sizeCoveredCardsTableaus() {
