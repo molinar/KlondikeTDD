@@ -7,6 +7,8 @@ public class StartController extends Klondike{
     
     private ArrayList<StackCards> tableaus;
     
+    protected ArrayList<StackCards> foundations;
+    
     public static final int NUM_TABLEAUS = 7;
     
     public static final int NUM_FOUNDATIONS = 4;

@@ -20,4 +20,14 @@ public class Card {
     public void setUncovered(boolean uncovered) {
         this.uncovered = uncovered;
     }
+
+    public Suit getSuit() {
+        return suit;
+    }
+
+    public int getValue() {
+        return value;
+    }
+    
+    
 }
