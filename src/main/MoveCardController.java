@@ -5,7 +5,7 @@ public class MoveCardController {
     private Deck deck;
 
     private Waste waste;
-
+ 
     public MoveCardController(int sizeDeck, int sizeWaste) {
         this.deck = new Deck(sizeDeck);
         this.waste = new Waste(sizeWaste);
