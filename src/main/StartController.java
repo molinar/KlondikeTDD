@@ -6,8 +6,6 @@ import java.util.Random;
 public class StartController extends Klondike{
     
     private ArrayList<StackCards> tableaus;
-
-    private ArrayList<StackCards> foundations;
     
     public static final int NUM_TABLEAUS = 7;
     
@@ -49,9 +47,15 @@ public class StartController extends Klondike{
         this.waste = new StackCards(0);
     }
     
+    public static <T extends Enum<?>> T randomEnum(Class<T> clazz){
+        Random random = new Random();
+        int x = random.nextInt(clazz.getEnumConstants().length);
+        return clazz.getEnumConstants()[x];
+    }
+    
     public Card createRandomCard() {
         Random rn = new Random();
-        return new Card(rn.nextInt(4), rn.nextInt(12));
+        return new Card(randomEnum(Suit.class), rn.nextInt(12));
     }
 
     public boolean emptyFoundations() {

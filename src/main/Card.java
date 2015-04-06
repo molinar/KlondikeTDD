@@ -4,11 +4,11 @@ public class Card {
 
     private boolean uncovered = false;
 
-    private int suit;
+    private Suit suit;
 
     private int value;
 
-    public Card(int suit, int value) {
+    public Card(Suit suit, int value) {
         this.suit = suit;
         this.value = value;
     }

@@ -23,9 +23,15 @@ public class StackCards {
     public void setCards(Stack<Card> cards) {
         this.cards = cards;
     }
+    
+    public static <T extends Enum<?>> T randomEnum(Class<T> clazz){
+        Random random = new Random();
+        int x = random.nextInt(clazz.getEnumConstants().length);
+        return clazz.getEnumConstants()[x];
+    }
 
     public Card createRandomCard() {
         Random rn = new Random();
-        return new Card(rn.nextInt(4), rn.nextInt(12));
+        return new Card(randomEnum(Suit.class), rn.nextInt(12));
     }
 }
