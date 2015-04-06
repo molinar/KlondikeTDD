@@ -26,12 +26,12 @@ public class StartControllerTest {
     
     @Test
     public void emptyWasteTest(){
-        assertTrue(startController.emptyWaste());
+        assertEquals(0, startController.sizeWaste());
     }
     
     @Test
     public void sizeCompleteDeckTest(){
-        assertEquals(24, startController.sizeCompleteDeck());
+        assertEquals(24, startController.sizeDeck());
     }
     
     @Test

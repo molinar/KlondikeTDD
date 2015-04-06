@@ -74,11 +74,11 @@ public class StartController {
         return false;
     }
 
-    public boolean emptyWaste() {
-        return waste.getCards().empty();
+    public int sizeWaste() {
+        return waste.getCards().size();
     }
 
-    public int sizeCompleteDeck() {
+    public int sizeDeck() {
         return deck.getCards().size();
     }
 
