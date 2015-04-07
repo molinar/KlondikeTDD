@@ -35,6 +35,4 @@ public class Klondike {
     public void setTableau(StackCards tableau) {
         this.tableau = tableau;
     }
-    
-    
 }

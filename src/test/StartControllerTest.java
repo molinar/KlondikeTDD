@@ -44,8 +44,8 @@ public class StartControllerTest {
     }
     
     @Test
-    public void uncoveredCardsStackTableausTest(){
-        ArrayList<Card> uncoveredCardsStackTableaus = startController.uncoveredCardsStackTableaus();
+    public void uncoveredCardsTableausTest(){
+        ArrayList<Card> uncoveredCardsStackTableaus = startController.uncoveredCardsTableaus();
         assertEquals(7,uncoveredCardsStackTableaus.size());
         for(Card uncoveredCardStack : uncoveredCardsStackTableaus) {
             assertTrue(uncoveredCardStack.isUncovered());

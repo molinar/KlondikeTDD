@@ -69,7 +69,7 @@ public class MoveCardControllerTest {
         waste.getCards().push(new Card(Suit.CLUBS, 4));
         moveCardController = new MoveCardController();
         moveCardController.setWaste(waste);
-        moveCardController.moveFromWasteToFoundation(foundation);
+        moveCardController.moveToFoundation(foundation, waste);
         assertEquals(0, moveCardController.getSizeWaste());
         assertEquals(4, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
@@ -80,7 +80,7 @@ public class MoveCardControllerTest {
         waste.getCards().push(new Card(Suit.CLUBS, 4));
         moveCardController = new MoveCardController();
         moveCardController.setWaste(waste);
-        moveCardController.moveFromWasteToFoundation(foundation);
+        moveCardController.moveToFoundation(foundation, waste);
         assertEquals(1, moveCardController.getSizeWaste());
         assertEquals(1, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
@@ -93,7 +93,7 @@ public class MoveCardControllerTest {
         waste.getCards().push(new Card(Suit.DIAMONDS, 4));
         MoveCardController moveCardController = new MoveCardController();
         moveCardController.setWaste(waste);
-        moveCardController.moveFromWasteToFoundation(foundation);
+        moveCardController.moveToFoundation(foundation, waste);
         assertEquals(1, moveCardController.getSizeWaste());
         assertEquals(3, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
@@ -106,7 +106,7 @@ public class MoveCardControllerTest {
         waste.getCards().push(new Card(Suit.CLUBS, 2));
         moveCardController = new MoveCardController();
         moveCardController.setWaste(waste);
-        moveCardController.moveFromWasteToFoundation(foundation);
+        moveCardController.moveToFoundation(foundation, waste);
         assertEquals(1, moveCardController.getSizeWaste());
         assertEquals(3, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
@@ -116,7 +116,7 @@ public class MoveCardControllerTest {
         waste.getCards().push(new Card(Suit.CLUBS, 1));
         moveCardController = new MoveCardController();
         moveCardController.setWaste(waste);
-        moveCardController.moveFromWasteToFoundation(foundation);
+        moveCardController.moveToFoundation(foundation, waste);
         assertEquals(0, moveCardController.getSizeWaste());
         assertEquals(1, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
@@ -126,7 +126,7 @@ public class MoveCardControllerTest {
         waste.getCards().push(new Card(Suit.SPADES, 5));
         moveCardController = new MoveCardController();
         moveCardController.setWaste(waste);
-        moveCardController.moveFromWasteToFoundation(foundation);
+        moveCardController.moveToFoundation(foundation, waste);
         assertEquals(1, moveCardController.getSizeWaste());
         assertTrue(foundation.getCards().empty());
         assertEquals(Suit.CLUBS, foundation.getSuit());
@@ -145,7 +145,7 @@ public class MoveCardControllerTest {
         tableau.getCards().push(new Card(Suit.CLUBS, 4));
         moveCardController = new MoveCardController();
         moveCardController.setTableau(tableau);
-        moveCardController.moveFromTableauToFoundation(foundation);
+        moveCardController.moveToFoundation(foundation, tableau);
         assertEquals(0, moveCardController.getSizeTableau());
         assertEquals(4, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
@@ -156,7 +156,7 @@ public class MoveCardControllerTest {
         tableau.getCards().push(new Card(Suit.CLUBS, 4));
         moveCardController = new MoveCardController();
         moveCardController.setTableau(tableau);
-        moveCardController.moveFromTableauToFoundation(foundation);
+        moveCardController.moveToFoundation(foundation, tableau);
         assertEquals(1, moveCardController.getSizeTableau());
         assertEquals(1, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
@@ -169,7 +169,7 @@ public class MoveCardControllerTest {
         tableau.getCards().push(new Card(Suit.DIAMONDS, 4));
         MoveCardController moveCardController = new MoveCardController();
         moveCardController.setTableau(tableau);
-        moveCardController.moveFromTableauToFoundation(foundation);
+        moveCardController.moveToFoundation(foundation, tableau);
         assertEquals(1, moveCardController.getSizeTableau());
         assertEquals(3, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
@@ -182,7 +182,7 @@ public class MoveCardControllerTest {
         tableau.getCards().push(new Card(Suit.CLUBS, 2));
         moveCardController = new MoveCardController();
         moveCardController.setTableau(tableau);
-        moveCardController.moveFromTableauToFoundation(foundation);
+        moveCardController.moveToFoundation(foundation, tableau);
         assertEquals(1, moveCardController.getSizeTableau());
         assertEquals(3, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
@@ -192,7 +192,7 @@ public class MoveCardControllerTest {
         tableau.getCards().push(new Card(Suit.CLUBS, 1));
         moveCardController = new MoveCardController();
         moveCardController.setTableau(tableau);
-        moveCardController.moveFromTableauToFoundation(foundation);
+        moveCardController.moveToFoundation(foundation, tableau);
         assertEquals(0, moveCardController.getSizeTableau());
         assertEquals(1, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
@@ -202,7 +202,7 @@ public class MoveCardControllerTest {
         tableau.getCards().push(new Card(Suit.SPADES, 5));
         moveCardController = new MoveCardController();
         moveCardController.setTableau(tableau);
-        moveCardController.moveFromTableauToFoundation(foundation);
+        moveCardController.moveToFoundation(foundation, tableau);
         assertEquals(1, moveCardController.getSizeTableau());
         assertTrue(foundation.getCards().empty());
         assertEquals(Suit.CLUBS, foundation.getSuit());

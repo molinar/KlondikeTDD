@@ -21,14 +21,14 @@ public class StartController extends Klondike {
 
     public void createTableaus() {
         this.tableaus = new ArrayList<StackCards>();
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < NUM_TABLEAUS; i++) {
             StackCards tableau = new StackCards();
             for (int j = 0; j < i + 1; j++) {
                 tableau.getCards().add(tableau.createRandomCard());
             }
             this.tableaus.add(tableau);            
         }
-        this.uncoveredCardsStackTableaus();
+        this.uncoveredCardsTableaus();
     }
     
     public void createFoundations() {
@@ -65,7 +65,7 @@ public class StartController extends Klondike {
         return sizeTableaus;
     }
 
-    public ArrayList<Card> uncoveredCardsStackTableaus() {
+    public ArrayList<Card> uncoveredCardsTableaus() {
         ArrayList<Card> uncoveredCardsStackTableaus = new ArrayList<Card>();
         for (StackCards tableau : tableaus) {
             tableau.getCards().peek().setUncovered(true);
