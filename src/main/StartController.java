@@ -6,7 +6,7 @@ public class StartController extends Klondike {
 
     protected ArrayList<Foundation> foundations;
 
-    private Tableaus tableaus;
+    private ArrayList<StackCards> tableaus;
     
     public static final int NUM_TABLEAUS = 7;
 
@@ -20,13 +20,13 @@ public class StartController extends Klondike {
     }
 
     public void createTableaus() {
-        this.tableaus = new Tableaus();
+        this.tableaus = new ArrayList<StackCards>();
         for (int i = 0; i < 7; i++) {
             StackCards tableau = new StackCards();
             for (int j = 0; j < i + 1; j++) {
                 tableau.getCards().add(tableau.createRandomCard());
             }
-            this.tableaus.addTableau(tableau, i);            
+            this.tableaus.add(tableau);            
         }
         this.uncoveredCardsStackTableaus();
     }
@@ -59,7 +59,7 @@ public class StartController extends Klondike {
 
     public ArrayList<Integer> sizeCoveredCardsTableaus() {
         ArrayList<Integer> sizeTableaus = new ArrayList<Integer>();
-        for (StackCards tableau : tableaus.getListTableaus()) {
+        for (StackCards tableau : tableaus) {
             sizeTableaus.add(tableau.getCards().size());
         }
         return sizeTableaus;
@@ -67,7 +67,7 @@ public class StartController extends Klondike {
 
     public ArrayList<Card> uncoveredCardsStackTableaus() {
         ArrayList<Card> uncoveredCardsStackTableaus = new ArrayList<Card>();
-        for (StackCards tableau : tableaus.getListTableaus()) {
+        for (StackCards tableau : tableaus) {
             tableau.getCards().peek().setUncovered(true);
             uncoveredCardsStackTableaus.add(tableau.getCards().peek());
         }

@@ -27,4 +27,10 @@ public class MoveCardController extends Klondike{
             foundation.getCards().push(this.waste.getCards().pop());
         }
     }
+
+    public void moveFromTableauToFoundation(Foundation foundation) {
+        if(foundation.acceptMovement(this.tableau.getCards().peek())){
+            foundation.getCards().push(this.tableau.getCards().pop());
+        }        
+    }
 }
