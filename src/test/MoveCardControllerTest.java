@@ -15,6 +15,7 @@ import main.Suit;
 public class MoveCardControllerTest {
 
     StartController startController;
+
     MoveCardController moveCardController;
 
     @Before
@@ -59,7 +60,7 @@ public class MoveCardControllerTest {
     public void moveFromWasteToFoundationTest() {
         Foundation foundation;
         StackCards waste;
-        
+
         foundation = new Foundation(Suit.CLUBS);
         foundation.getCards().push(new Card(Suit.CLUBS, 1));
         foundation.getCards().push(new Card(Suit.CLUBS, 2));
@@ -72,7 +73,7 @@ public class MoveCardControllerTest {
         assertEquals(0, moveCardController.getSizeWaste());
         assertEquals(4, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
-        
+
         foundation = new Foundation(Suit.CLUBS);
         foundation.getCards().push(new Card(Suit.CLUBS, 1));
         waste = new StackCards();
@@ -83,7 +84,7 @@ public class MoveCardControllerTest {
         assertEquals(1, moveCardController.getSizeWaste());
         assertEquals(1, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
-        
+
         foundation = new Foundation(Suit.CLUBS);
         foundation.getCards().push(new Card(Suit.CLUBS, 1));
         foundation.getCards().push(new Card(Suit.CLUBS, 2));
@@ -96,7 +97,7 @@ public class MoveCardControllerTest {
         assertEquals(1, moveCardController.getSizeWaste());
         assertEquals(3, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
-        
+
         foundation = new Foundation(Suit.CLUBS);
         foundation.getCards().push(new Card(Suit.CLUBS, 1));
         foundation.getCards().push(new Card(Suit.CLUBS, 2));
@@ -109,7 +110,7 @@ public class MoveCardControllerTest {
         assertEquals(1, moveCardController.getSizeWaste());
         assertEquals(3, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
-        
+
         foundation = new Foundation(Suit.CLUBS);
         waste = new StackCards();
         waste.getCards().push(new Card(Suit.CLUBS, 1));
@@ -119,7 +120,7 @@ public class MoveCardControllerTest {
         assertEquals(0, moveCardController.getSizeWaste());
         assertEquals(1, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
-        
+
         foundation = new Foundation(Suit.CLUBS);
         waste = new StackCards();
         waste.getCards().push(new Card(Suit.SPADES, 5));
@@ -130,12 +131,12 @@ public class MoveCardControllerTest {
         assertTrue(foundation.getCards().empty());
         assertEquals(Suit.CLUBS, foundation.getSuit());
     }
-    
+
     @Test
     public void moveFromTableauToFoundationTest() {
         Foundation foundation;
         StackCards tableau;
-        
+
         foundation = new Foundation(Suit.CLUBS);
         foundation.getCards().push(new Card(Suit.CLUBS, 1));
         foundation.getCards().push(new Card(Suit.CLUBS, 2));
@@ -148,7 +149,7 @@ public class MoveCardControllerTest {
         assertEquals(0, moveCardController.getSizeTableau());
         assertEquals(4, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
-       
+
         foundation = new Foundation(Suit.CLUBS);
         foundation.getCards().push(new Card(Suit.CLUBS, 1));
         tableau = new StackCards();
@@ -159,7 +160,7 @@ public class MoveCardControllerTest {
         assertEquals(1, moveCardController.getSizeTableau());
         assertEquals(1, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
-        
+
         foundation = new Foundation(Suit.CLUBS);
         foundation.getCards().push(new Card(Suit.CLUBS, 1));
         foundation.getCards().push(new Card(Suit.CLUBS, 2));
@@ -172,7 +173,7 @@ public class MoveCardControllerTest {
         assertEquals(1, moveCardController.getSizeTableau());
         assertEquals(3, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
-        
+
         foundation = new Foundation(Suit.CLUBS);
         foundation.getCards().push(new Card(Suit.CLUBS, 1));
         foundation.getCards().push(new Card(Suit.CLUBS, 2));
@@ -185,7 +186,7 @@ public class MoveCardControllerTest {
         assertEquals(1, moveCardController.getSizeTableau());
         assertEquals(3, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
-        
+
         foundation = new Foundation(Suit.CLUBS);
         tableau = new StackCards();
         tableau.getCards().push(new Card(Suit.CLUBS, 1));
@@ -195,7 +196,7 @@ public class MoveCardControllerTest {
         assertEquals(0, moveCardController.getSizeTableau());
         assertEquals(1, foundation.getCards().peek().getValue());
         assertEquals(Suit.CLUBS, foundation.getCards().peek().getSuit());
-        
+
         foundation = new Foundation(Suit.CLUBS);
         tableau = new StackCards();
         tableau.getCards().push(new Card(Suit.SPADES, 5));

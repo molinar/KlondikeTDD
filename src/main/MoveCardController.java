@@ -1,13 +1,13 @@
 package main;
 
-public class MoveCardController extends Klondike{
-    
+public class MoveCardController extends Klondike {
+
     public MoveCardController(int sizeDeck, int sizeWaste) {
         this.deck = new StackCards(sizeDeck);
         this.waste = new StackCards(sizeWaste);
     }
-    
-    public MoveCardController(){
+
+    public MoveCardController() {
     }
 
     public void moveFromDeckToWaste() {
@@ -21,16 +21,16 @@ public class MoveCardController extends Klondike{
             this.waste.getCards().push(card).setUncovered(true);
         }
     }
-    
-    public void moveFromWasteToFoundation(Foundation foundation){
-        if(foundation.acceptMovement(this.waste.getCards().peek())){
+
+    public void moveFromWasteToFoundation(Foundation foundation) {
+        if (foundation.acceptMovement(this.waste.getCards().peek())) {
             foundation.getCards().push(this.waste.getCards().pop());
         }
     }
 
     public void moveFromTableauToFoundation(Foundation foundation) {
-        if(foundation.acceptMovement(this.tableau.getCards().peek())){
+        if (foundation.acceptMovement(this.tableau.getCards().peek())) {
             foundation.getCards().push(this.tableau.getCards().pop());
-        }        
+        }
     }
 }
