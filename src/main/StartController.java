@@ -2,7 +2,7 @@ package main;
 
 import java.util.ArrayList;
 
-public class StartController extends Klondike {
+public class StartController extends KlondikeController {
 
     protected ArrayList<Foundation> foundations;
 

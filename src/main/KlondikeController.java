@@ -1,6 +1,6 @@
 package main;
 
-public class Klondike {
+public class KlondikeController {
 
     protected StackCards deck;
 

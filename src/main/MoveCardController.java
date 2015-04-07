@@ -1,6 +1,6 @@
 package main;
 
-public class MoveCardController extends Klondike {
+public class MoveCardController extends KlondikeController {
 
     public MoveCardController(int sizeDeck, int sizeWaste) {
         this.deck = new StackCards(sizeDeck);
